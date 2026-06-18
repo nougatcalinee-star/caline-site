@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
+import { Baloo_2, Nunito, DM_Serif_Display } from 'next/font/google';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { CartProvider } from '@/components/CartProvider';
@@ -7,16 +7,14 @@ import { CartDrawer } from '@/components/CartDrawer';
 import { SITE } from '@/lib/site';
 import './globals.css';
 
-// Poppins embarqué localement (pas de fetch Google Fonts au build).
-const poppins = localFont({
-  src: [
-    { path: './fonts/Poppins-Light.ttf', weight: '300', style: 'normal' },
-    { path: './fonts/Poppins-Regular.ttf', weight: '400', style: 'normal' },
-    { path: './fonts/Poppins-Medium.ttf', weight: '500', style: 'normal' },
-    { path: './fonts/Poppins-Bold.ttf', weight: '700', style: 'normal' },
-    { path: './fonts/Poppins-Bold.ttf', weight: '800', style: 'normal' },
-  ],
-  variable: '--font-poppins',
+// Direction artistique Câline : Baloo 2 (titres ronds), Nunito (texte), DM Serif Display (accents).
+const baloo = Baloo_2({ subsets: ['latin'], variable: '--font-baloo', display: 'swap' });
+const nunito = Nunito({ subsets: ['latin'], variable: '--font-nunito', display: 'swap' });
+const dmSerif = DM_Serif_Display({
+  subsets: ['latin'],
+  weight: '400',
+  style: ['normal', 'italic'],
+  variable: '--font-serif',
   display: 'swap',
 });
 
@@ -46,7 +44,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={poppins.variable}>
+    <html lang="fr" className={`${baloo.variable} ${nunito.variable} ${dmSerif.variable}`}>
       <body>
         <CartProvider>
           <Nav />

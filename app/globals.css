@@ -6,40 +6,33 @@
   html {
     scroll-behavior: smooth;
   }
-
   body {
     @apply bg-cream text-ink antialiased;
   }
-
   ::selection {
     @apply bg-candy-200 text-candy-700;
   }
 }
 
 @layer components {
+  /* Accent éditorial DA : petit kicker en DM Serif Display italique */
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-xs font-extrabold tracking-[0.14em] uppercase text-candy-600;
+    @apply inline-flex items-center gap-2 font-serif italic text-base text-candy-600;
   }
-
   .section {
     @apply py-20 md:py-28;
   }
-
   .heading-section {
     @apply font-display text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink leading-[1.05];
   }
-
   .heading-hero {
     @apply font-display text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-ink leading-[0.95];
   }
-
-  /* Pastille colorée arrondie */
   .pill {
     @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold;
   }
-
-  /* Fond dégradé bonbon */
+  /* Dégradé gourmand DA : abricot → corail → framboise */
   .bg-candy-gradient {
-    background: linear-gradient(135deg, #FFB23E 0%, #FF7A59 45%, #E2486B 100%);
+    background: linear-gradient(135deg, #F2A93B 0%, #E8806B 45%, #E8546B 100%);
   }
 }
