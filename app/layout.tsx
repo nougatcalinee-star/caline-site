@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Baloo_2, Nunito, DM_Serif_Display } from 'next/font/google';
+import { Baloo_2, Nunito } from 'next/font/google';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { CartProvider } from '@/components/CartProvider';
@@ -7,16 +7,9 @@ import { CartDrawer } from '@/components/CartDrawer';
 import { SITE } from '@/lib/site';
 import './globals.css';
 
-// Direction artistique Câline : Baloo 2 (titres ronds), Nunito (texte), DM Serif Display (accents).
+// DA Câline — Piste 01 « Tout Doux » : Baloo 2 (titres) + Nunito (texte).
 const baloo = Baloo_2({ subsets: ['latin'], variable: '--font-baloo', display: 'swap' });
 const nunito = Nunito({ subsets: ['latin'], variable: '--font-nunito', display: 'swap' });
-const dmSerif = DM_Serif_Display({
-  subsets: ['latin'],
-  weight: '400',
-  style: ['normal', 'italic'],
-  variable: '--font-serif',
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: {
@@ -44,7 +37,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${baloo.variable} ${nunito.variable} ${dmSerif.variable}`}>
+    <html lang="fr" className={`${baloo.variable} ${nunito.variable}`}>
       <body>
         <CartProvider>
           <Nav />

@@ -15,9 +15,9 @@
 }
 
 @layer components {
-  /* Accent éditorial DA : petit kicker en DM Serif Display italique */
+  /* Kicker DA — petites capitales espacées */
   .eyebrow {
-    @apply inline-flex items-center gap-2 font-serif italic text-base text-candy-600;
+    @apply inline-flex items-center gap-2 text-xs font-extrabold tracking-[0.16em] uppercase text-candy-600;
   }
   .section {
     @apply py-20 md:py-28;

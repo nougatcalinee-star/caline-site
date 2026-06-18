@@ -53,7 +53,6 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-nunito)', 'system-ui', 'sans-serif'],
         display: ['var(--font-baloo)', 'var(--font-nunito)', 'sans-serif'],
-        serif: ['var(--font-serif)', 'Georgia', 'serif'],
       },
       borderRadius: { '4xl': '2rem' },
       container: {
