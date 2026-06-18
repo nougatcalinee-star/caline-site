@@ -1,0 +1,14 @@
+/node_modules
+/.next
+/out
+/build
+.env
+.env*.local
+.DS_Store
+*.pem
+npm-debug.log*
+.vercel
+next-env.d.ts
+
+# dossier git cassé (créé par erreur, à supprimer)
+.brokengit_ignore/
